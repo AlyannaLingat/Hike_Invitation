@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hike</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏔️</text></svg>">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -28,13 +29,13 @@
     <div class="date-picker" id="datePicker">
       <p class="eyebrow" style="margin-top:1.6rem;">pick one</p>
       <div class="date-grid">
-        <button class="date-opt" data-date="Mt. Batulao" data-icon="🌿">Mt. Batulao</button>
+        <button class="date-opt" data-date="Mt. Batulao" data-icon="🏔️">Mt. Batulao</button>
         <button class="date-opt" data-date="Dingalan, Aurora" data-icon="🌿">Dingalan, Aurora</button>
-        <button class="date-opt" data-date="Kayapa Trilogy" data-icon="🌿">Kayapa Trilogy</button>
-        <button class="date-opt" data-date="Nasugbu Trilogy" data-icon="🌿">Nasugbu Trilogy</button>
-        <button class="date-opt" data-date="Mt. Ulap" data-icon="🌿">Mt. Ulap</button>
-        <button class="date-opt" data-date="Nagpatong Rock" data-icon="🌿">Mt. Nagpatong Rock</button>
-        <button class="date-opt" data-date="Mt. 387" data-icon="🌿">Mt. 387</button>
+        <button class="date-opt" data-date="Kayapa Trilogy" data-icon="🏔️">Kayapa Trilogy</button>
+        <button class="date-opt" data-date="Nasugbu Trilogy" data-icon="🏔️">Nasugbu Trilogy</button>
+        <button class="date-opt" data-date="Mt. Ulap" data-icon="🏔️">Mt. Ulap</button>
+        <button class="date-opt" data-date="Nagpatong Rock" data-icon="🏔️">Mt. Nagpatong Rock</button>
+        <button class="date-opt" data-date="Mt. 387" data-icon="🏔️">Mt. 387</button>
         <button class="date-opt" data-date="Surprise me" data-icon="🎲">You choose — surprise me</button>
       </div>
     </div>
@@ -47,6 +48,16 @@
     </div>
   </section>
 
+</div>
+
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal-card">
+    <button class="modal-close" id="modalClose" aria-label="Close">×</button>
+    <div class="modal-icon">🏔️</div>
+    <p class="eyebrow">it's settled</p>
+    <h2 class="modal-title">Thank you for saying yes.</h2>
+    <p class="modal-text" id="modalText">Can't wait to explore <span id="modalHike">—</span> with you.</p>
+  </div>
 </div>
 
 <footer>come hike with me</footer>
