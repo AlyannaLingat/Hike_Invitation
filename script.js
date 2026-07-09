@@ -68,7 +68,28 @@ dateOpts.forEach(opt=>{
     opt.classList.add('selected');
     summaryDate.textContent = opt.dataset.date;
     summaryCard.classList.add('active');
+
+    // show the thank-you pop-up
+    showModal(opt.dataset.date);
+
   });
+});
+
+// pop-up modal
+const modalOverlay = document.getElementById('modalOverlay');
+const modalClose = document.getElementById('modalClose');
+const modalHike = document.getElementById('modalHike');
+
+function showModal(hikeName){
+  modalHike.textContent = hikeName;
+  modalOverlay.classList.add('visible');
+}
+function hideModal(){
+  modalOverlay.classList.remove('visible');
+}
+modalClose.addEventListener('click', hideModal);
+modalOverlay.addEventListener('click', (e)=>{
+  if(e.target === modalOverlay) hideModal();
 });
 
 function burstPetals(){
