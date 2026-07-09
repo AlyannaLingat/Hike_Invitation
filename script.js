@@ -1,3 +1,25 @@
+// ⚠️ Paste your Apps Script Web App URL here
+
+const SHEET_ENDPOINT = "https://sheetdb.io/api/v1/843c64bxolyxy";
+
+function sendResponse(payload){
+  fetch(SHEET_ENDPOINT, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      data: {
+        Timestamp: new Date().toISOString(),
+        Answer: payload.answer,
+        "Hike Choice": payload.hike,
+        "Time Dodged": payload.dodges
+      }
+    })
+  })
+  .then(res => res.json())
+  .then(data => console.log("Saved to sheet:", data))
+  .catch(err => console.error("Failed to save response:", err));
+}
+
 // starfield
 const sky = document.getElementById('sky');
 const starCount = 90;
@@ -69,11 +91,19 @@ dateOpts.forEach(opt=>{
     summaryDate.textContent = opt.dataset.date;
     summaryCard.classList.add('active');
 
+    // save the response to the Google Sheet
+    sendResponse({
+      answer: "yes",
+      hike: opt.dataset.date,
+      dodges: dodgeCount
+    });
+
     // show the thank-you pop-up
     showModal(opt.dataset.date);
 
   });
 });
+
 
 // pop-up modal
 const modalOverlay = document.getElementById('modalOverlay');
