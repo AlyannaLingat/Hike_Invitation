@@ -162,6 +162,16 @@ footer{
   grid-template-columns:repeat(2, minmax(0,1fr));
   gap:.7rem;
   margin-top:1.1rem;
+  font-family:'Trebuchet MS', sans-serif;
+  font-size:.85rem;
+  text-align:left;
+  color:var(--cream);
+  background:rgba(253,246,236,.06);
+  border:1px solid rgba(201,182,228,.35);
+  border-radius:14px;
+  padding:.8rem .95rem;
+  cursor:pointer;
+  transition: background .2s ease, transform .15s ease, border-color .2s ease;
 }
 
 .date-grid{
