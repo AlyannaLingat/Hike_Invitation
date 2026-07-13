@@ -26,9 +26,11 @@
     <div class="bloom" id="bloom">You said yes!</div>
     <p class="sub" style="margin-top:1rem;">good. now, one more question —</p>
 
-    <div class="date-picker" id="datePicker">
+    <!--Input Name-->
       <label for="name">Please state your name: </label>
-      <input type=“text” id=“name” name=“name”>
+      <input type=“text” id="Inputname" class="name-input" placeholder="Enter your name">
+
+    <div class="date-picker" id="datePicker">
       <p class="eyebrow" style="margin-top:1.6rem;">pick one</p>
       <div class="date-grid">
         <button class="date-opt" data-date="Mt. Batulao" data-icon="🏔️">Mt. Batulao</button>
@@ -46,6 +48,7 @@
       <p class="eyebrow">the recap</p>
       <p class="summary-line"><span class="summary-label">Question:</span> Would you like to come hiking with me?</p>
       <p class="summary-line"><span class="summary-label">Your answer:</span> Yes </p>
+      <p class="summary-line"><span class="summary-label">Name:</span> <span id="summaryName">—</span></p>
       <p class="summary-line"><span class="summary-label">First hike:</span> <span id="summaryDate">—</span></p>
     </div>
   </section>
