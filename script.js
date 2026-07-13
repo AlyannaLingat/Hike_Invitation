@@ -1,5 +1,4 @@
-// ⚠️ Paste your Apps Script Web App URL here
-
+// ⚠️ Paste your SheetDB API endpoint here
 const SHEET_ENDPOINT = "https://sheetdb.io/api/v1/843c64bxolyxy";
 
 function sendResponse(payload){
@@ -8,7 +7,17 @@ function sendResponse(payload){
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       data: {
-        Timestamp: new Date().toISOString(),
+        Timestamp: new Date().toLocaleString("en-PH", {
+          timeZone: "Asia/Manila",
+           year: "numeric",
+           month: "2-digit",
+          day: "2-digit",
+          hour: "2-digit",
+           minute: "2-digit",
+          second: "2-digit",
+          hour12: false
+}),
+        Name: payload.name,
         Answer: payload.answer,
         "Hike Choice": payload.hike,
         "Time Dodged": payload.dodges
@@ -80,6 +89,12 @@ yesBtn.addEventListener('click', ()=>{
   }
 });
 
+// name field
+const nameInput = document.getElementById('Inputname');
+const summaryName = document.getElementById('summaryName');
+console.log("DEBUG nameInput:", nameInput);
+console.log("DEBUG summaryName:", summaryName);
+
 // date type picker
 const dateOpts = document.querySelectorAll('.date-opt');
 const summaryCard = document.getElementById('summaryCard');
@@ -91,19 +106,21 @@ dateOpts.forEach(opt=>{
     summaryDate.textContent = opt.dataset.date;
     summaryCard.classList.add('active');
 
+    const enteredName = nameInput.value.trim() || "—";
+    summaryName.textContent = enteredName;
+
     // save the response to the Google Sheet
     sendResponse({
+      name: enteredName,
       answer: "yes",
       hike: opt.dataset.date,
       dodges: dodgeCount
     });
 
     // show the thank-you pop-up
-    showModal(opt.dataset.date);
-
+    showModal(opt.dataset.date, enteredName);
   });
 });
-
 
 // pop-up modal
 const modalOverlay = document.getElementById('modalOverlay');
