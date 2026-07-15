@@ -99,16 +99,50 @@ console.log("DEBUG summaryName:", summaryName);
 const dateOpts = document.querySelectorAll('.date-opt');
 const summaryCard = document.getElementById('summaryCard');
 const summaryDate = document.getElementById('summaryDate');
-dateOpts.forEach(opt=>{
-  opt.addEventListener('click', ()=>{
-    dateOpts.forEach(o=>o.classList.remove('selected'));
-    opt.classList.add('selected');
-    summaryDate.textContent = opt.dataset.date;
+const summaryLocation = document.getElementById('summaryLocation');
+const summaryInfo = document.getElementById('summaryInfo');
+// hike photo preview
+const hikePhoto = document.getElementById('hikePhoto');
+
+dateOpts.forEach(opt => {
+  opt.addEventListener('click', () => {
+
+    // Remove previous selection
+    dateOpts.forEach(o => o.classList.remove('selected'));
+
+    // Default selection
+    let selected = opt;
+
+    // Surprise Me
+    if (opt.dataset.date === "Surprise Me") {
+      const hikes = [...dateOpts].filter(
+        h => h.dataset.date !== "Surprise Me"
+      );
+
+      selected = hikes[Math.floor(Math.random() * hikes.length)];
+    }
+
+    // Highlight the chosen hike
+    selected.classList.add('selected');
+
+    // Show summary
     summaryCard.classList.add('active');
 
     const enteredName = nameInput.value.trim() || "—";
     summaryName.textContent = enteredName;
 
+    summaryDate.textContent = selected.dataset.date;
+    summaryLocation.textContent = selected.dataset.location || "—";
+    summaryInfo.textContent =
+      selected.dataset.info || "No trail information available.";
+
+    // Show photo
+    if (selected.dataset.image) {
+      hikePhoto.src = selected.dataset.image;
+      hikePhoto.alt = selected.dataset.date;
+      hikePhoto.style.display = "block";
+      requestAnimationFrame(() => hikePhoto.classList.add('visible'));
+    }
     // save the response to the Google Sheet
     sendResponse({
       name: enteredName,
