@@ -29,7 +29,30 @@
     <!--Input Name-->
       <label for="name">Please state your name: </label>
       <input type=“text” id="Inputname" class="name-input" placeholder="Enter your name">
+<div class="date-picker" id="datePicker">
+      <p class="eyebrow" style="margin-top:1.6rem;">pick one</p><div class="date-grid">
+        <button class="date-opt" data-date="Mt. Batulao" data-icon="🏔️" data-image="Batulao.jpg" data-info="Difficulty: 4/9 (Minor Climb) | Mount Batulao is one of the most popular day hikes near Metro Manila, famous for its rolling, grass-covered ridges and stunning jagged peaks. Located just a couple of hours south of the capital, it's often nicknamed the 'Beginner's Playground,' though it still packs enough of a challenge to keep things interesting." data-location="Batangas">Mt. Batulao</button>
+        <button class="date-opt" data-date="Dingalan, Aurora" data-icon="🌿" data-image="Dingalan.jpg" data-info= "Difficulty: 1/9 to 2/9 (Very beginner-friendly) | Known as the 'Batanes of the East,' Dingalan is a coastal municipality in Aurora where the rugged ridges of the Sierra Madre mountains plunge directly into the roaring waters of the Pacific Ocean." data-location= "Aurora Province" >Dingalan, Aurora</button>
+        <button class="date-opt" data-date="Kayapa Trilogy" data-icon="🏔️" data-image="Kayapa.jpg" data-info="Difficulty: 3/9 (Minor Climb) | The 'Kayapa Trilogy' (now often hiked as a Quad-Peak), they are referring to a scenic, rolling ridge circuit in Brgy. Alang Salacsac. It covers Mt. Tugew, Mt. Cabo, Mt. Kabuan, and Mt. Sadjatan." data-location=" Kayapa, Nueva Vizcaya">Kayapa Trilogy</button>
+        <button class="date-opt" data-date="Nasugbu Trilogy" data-icon="🏔️" data-image="Nasugbo.jpg" data-info="Difficulty: Mt. Lantik (552 MASL)
 
+
+Mt. Talamitam (630 MASL)
+
+
+Mt. Apayang (662 MASL)| This is a continuous, scenic mountain circuit that lets you bag three distinct peaks—Mt. Lantik, Mt. Talamitam, and Mt. Apayang—in a single day hike." data-location="Nasugbu, Batangas">Nasugbu Trilogy</button>
+        <button class="date-opt" data-date="Mt. Ulap" data-icon="🏔️" data-image="Ulap.jpg" data-info="Difficulty: 3/9 (Minor Climb / Beginner to Intermediate) | If there’s one mountain that perfectly captures the dream of hiking in the Cordilleras, it’s Mt. Ulap.
+
+Located just a stone's throw from Baguio City, it offers the ultimate 'cloud walk' experience. The Eco-Trail treats you to postcard-worthy views of towering pine trees, rolling grasslands, and cool, crisp mountain air." data-location="Itogon Benguet">Mt. Ulap</button>
+        <button class="date-opt" data-date="Nagpatong Rock" data-icon="🏔️" data-image="NagpatongRock.jpg" data-info="Difficulty: 3/9 to 4/9 (Minor Climb / Rock Scrambling) | The Nagpatong Rock Formation in Tanay, Rizal is one of the most uniquely dramatic day hikes near Metro Manila. Its name translates to 'stacked rocks', which perfectly describes the two massive limestone karst towers that rise high above the forest canopy and look like giant stone blocks placed on top of each other." data-location="Tanay Rizal">Mt. Nagpatong Rock</button>
+        <button class="date-opt" data-date="Mt. 387" data-icon="🏔️" data-image="387.jpg" data-info="Difficulty: 2/9 (Backtrail) | Often dubbed the 'Chocolate Hills of the North' (or the Bohol of the North), Mt. 387 (formally known as Mount Batong-Amat) in Carranglan, Nueva Ecija is incredibly popular for its rolling, scenic landscapes." data-location="" >Mt. 387</button>
+        <button class="date-opt" data-date="Surprise Me" data-icon="🎲">You choose — surprise me</button>
+      </div>
+    </div>
+
+     <img id="hikePhoto" class="hike-photo" src="" alt="" style="display:none;">
+    
+<!--
     <div class="date-picker" id="datePicker">
       <p class="eyebrow" style="margin-top:1.6rem;">pick one</p>
       <div class="date-grid">
@@ -43,14 +66,19 @@
         <button class="date-opt" data-date="Surprise me" data-icon="🎲">You choose — surprise me</button>
       </div>
     </div>
-
+-->
+  
     <div class="summary-card" id="summaryCard">
       <p class="eyebrow">the recap</p>
       <p class="summary-line"><span class="summary-label">Question:</span> Would you like to come hiking with me?</p>
       <p class="summary-line"><span class="summary-label">Your answer:</span> Yes </p>
       <p class="summary-line"><span class="summary-label">Name:</span> <span id="summaryName">—</span></p>
       <p class="summary-line"><span class="summary-label">First hike:</span> <span id="summaryDate">—</span></p>
-    </div>
+      <p class="summary-line"><span class="summary-label">Location:</span><span id="summaryLocation">—</span></p>
+      <p class="summary-line"><span class="summary-label">Trail Info:</span> <span id="summaryInfo"></span>
+    </div> 
+
+    
   </section>
 
 </div>
