@@ -557,3 +557,22 @@ label{
   border-color:var(--blush);
   background:rgba(242,182,196,.1);
 }
+
+/* hike photo preview */
+.hike-photo{
+  margin-top:1.6rem;
+  width:100%;
+  max-width:420px;
+  max-height:260px;
+  object-fit:cover;
+  border-radius:18px;
+  border:1px solid rgba(201,182,228,.35);
+  box-shadow:0 12px 30px rgba(0,0,0,.35);
+  opacity:0;
+  transform:translateY(10px);
+  transition: opacity .4s ease, transform .4s ease;
+}
+.hike-photo.visible{
+  opacity:1;
+  transform:translateY(0);
+}
